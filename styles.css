@@ -1,0 +1,208 @@
+/* General Reset */
+body, h1, p, button, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background for the page */
+    color: #fff; /* White text for contrast */
+    margin: 0;
+}
+
+header {
+    background: #111; /* Slightly lighter black for the header */
+    color: #fff;
+    padding: 1rem 2rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    margin: 0;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+}
+
+.view-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Main Content Styles */
+main {
+    margin-top: 4rem; /* Space for fixed header */
+    padding: 2rem;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background: #222; /* Dark grey for the button */
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    background: #333; /* Darker background for dropdown */
+    border: 1px solid #444; /* Border color */
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    max-height: 70vh; /* Limit the height for better scrolling */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+/* Container for file items */
+.files-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 1rem; /* Space between grid items */
+}
+
+/* Individual file item styling */
+.file-item {
+    background: #222; /* Darker background for each item */
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap items if necessary */
+}
+
+.cover {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.details p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.details p strong {
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.download {
+    margin-left: auto;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.download a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.download a img {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+}
+
+/* Grid View Styles */
+.grid-view .files-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+}
+
+/* Detailed View Styles */
+.details-view .file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.details-view .cover {
+    width: 80px;
+    height: 80px;
+}
+
+.details-view .details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid-view .files-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .view-toggle {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-view .files-container {
+        grid-template-columns: 1fr; /* 1 item per row on very small screens */
+    }
+
+    .details p {
+        font-size: 0.8rem;
+    }
+}
